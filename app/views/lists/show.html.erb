@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @list.Name %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @list.Owner %>
+</p>
+
+<p>
+  <strong>Sharedwith:</strong>
+  <%= @list.Sharedwith %>
+</p>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name: MyString
+  Duedate: 2014-03-25
+  Owner_id: 
+  Parent_id: 
+
+two:
+  Name: MyString
+  Duedate: 2014-03-25
+  Owner_id: 
+  Parent_id: 
