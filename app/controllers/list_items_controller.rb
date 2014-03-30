@@ -1,4 +1,5 @@
 class ListItemsController < ApplicationController
+before_filter :authenticate_user!
   before_action :set_list_item, only: [:show, :edit, :update, :destroy]
 
   # GET /list_items

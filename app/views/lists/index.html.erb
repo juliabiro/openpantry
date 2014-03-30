@@ -4,8 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Owner</th>
-      <th>Sharedwith</th>
+      <th>Owner email</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,8 +15,7 @@
     <% @lists.each do |list| %>
       <tr>
         <td><%= list.Name %></td>
-        <td><%= list.Owner %></td>
-        <td><%= list.Sharedwith %></td>
+        <td><%= list.user.try(:email) %></td>
         <td><%= link_to 'Show', list %></td>
         <td><%= link_to 'Edit', edit_list_path(list) %></td>
         <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>

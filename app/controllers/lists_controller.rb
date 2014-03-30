@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+before_filter :authenticate_user!
+
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   # GET /lists
@@ -25,7 +27,7 @@ class ListsController < ApplicationController
   # POST /lists.json
   def create
     @list = List.new(list_params)
-
+    @list.user = current_user
     respond_to do |format|
       if @list.save
         format.html { redirect_to @list, notice: 'List was successfully created.' }

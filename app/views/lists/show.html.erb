@@ -7,13 +7,9 @@
 
 <p>
   <strong>Owner:</strong>
-  <%= @list.Owner %>
+  <%= @list.user.try(:email) %>
 </p>
 
-<p>
-  <strong>Sharedwith:</strong>
-  <%= @list.Sharedwith %>
-</p>
 
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
