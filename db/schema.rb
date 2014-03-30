@@ -11,18 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140330124502) do
+ActiveRecord::Schema.define(version: 20140330210152) do
 
   create_table "list_items", force: true do |t|
     t.string   "Name"
     t.date     "Duedate"
-    t.integer  "List_id"
     t.integer  "Status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "list_id"
   end
-
-  add_index "list_items", ["List_id"], name: "index_list_items_on_List_id"
 
   create_table "lists", force: true do |t|
     t.string   "Name"

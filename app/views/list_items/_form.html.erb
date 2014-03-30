@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+ <%= debug params %>  <div class="field">
     <%= f.label :Name %><br>
     <%= f.text_field :Name %>
   </div>
@@ -19,14 +19,8 @@
     <%= f.label :Duedate %><br>
     <%= f.date_select :Duedate %>
   </div>
-  <div class="field">
-    <%= f.label :Owner_id %><br>
-    <%= f.text_field :Owner_id %>
-  </div>
-  <div class="field">
-    <%= f.label :Parent_id %><br>
-    <%= f.text_field :Parent_id %>
-  </div>
+<%= f.hidden_field :list_id, value:@list_id %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

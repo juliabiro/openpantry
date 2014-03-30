@@ -11,14 +11,10 @@
 </p>
 
 <p>
-  <strong>Owner:</strong>
-  <%= @list_item.Owner %>
+  <strong>Parent list id:</strong>
+  <%= @list_item.list_id %>
 </p>
-
-<p>
-  <strong>Parent:</strong>
-  <%= @list_item.Parent %>
-</p>
+<%= debug params %>  <div class="field">
 
 <%= link_to 'Edit', edit_list_item_path(@list_item) %> |
 <%= link_to 'Back', list_items_path %>

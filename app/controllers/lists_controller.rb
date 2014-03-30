@@ -7,6 +7,7 @@ before_filter :authenticate_user!
   # GET /lists.json
   def index
     @lists = List.all
+    #@lists = List.where(:all, :conditions=>["user=?", current_user])
   end
 
   # GET /lists/1

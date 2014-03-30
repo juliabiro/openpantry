@@ -1,11 +1,11 @@
 class ListItemsController < ApplicationController
-before_filter :authenticate_user!
+before_filter :require_list
   before_action :set_list_item, only: [:show, :edit, :update, :destroy]
 
   # GET /list_items
   # GET /list_items.json
   def index
-    @list_items = ListItem.all
+    @list_items = ListItems.where(:all, :conditions=>["list=?", current_list])
   end
 
   # GET /list_items/1
@@ -71,5 +71,9 @@ before_filter :authenticate_user!
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_item_params
       params.require(:list_item).permit(:Name, :Duedate, :List_id)
+    end
+
+    def require_list
+	@current_list=@list_id
     end
 end

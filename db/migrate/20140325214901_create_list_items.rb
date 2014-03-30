@@ -3,7 +3,6 @@ class CreateListItems < ActiveRecord::Migration
     create_table :list_items do |t|
       t.string :Name
       t.date :Duedate
-      t.references :List, index: true
       t.integer :Status
       t.timestamps
     end
