@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140330210152) do
     t.integer  "Status"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "list_id"
+    t.integer  "List_id"
   end
 
   create_table "lists", force: true do |t|

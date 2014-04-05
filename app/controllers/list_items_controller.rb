@@ -1,11 +1,11 @@
 class ListItemsController < ApplicationController
-before_filter :require_list
-  before_action :set_list_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_list_item, only: [:show, :edit, :update, :destroy] 
+  before_action :req_lid, only: [:index] 
 
   # GET /list_items
   # GET /list_items.json
   def index
-    @list_items = ListItems.where(:all, :conditions=>["list=?", current_list])
+    @list_items = ListItem.where("List_id = ?", params[:current_list])
   end
 
   # GET /list_items/1
@@ -26,8 +26,7 @@ before_filter :require_list
   # POST /list_items.json
   def create
     @list_item = ListItem.new(list_item_params)
-
-    respond_to do |format|
+   respond_to do |format|
       if @list_item.save
         format.html { redirect_to @list_item, notice: 'List item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @list_item }
@@ -72,8 +71,7 @@ before_filter :require_list
     def list_item_params
       params.require(:list_item).permit(:Name, :Duedate, :List_id)
     end
-
-    def require_list
-	@current_list=@list_id
-    end
+ def req_lid
+	params.require(:current_list)
+end
 end

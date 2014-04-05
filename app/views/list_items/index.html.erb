@@ -1,33 +1,8 @@
-<h1>Listing list_items</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Duedate</th>
-      <th>Owner</th>
-      <th>Parent</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @list_items.each do |list_item| %>
-      <tr>
-        <td><%= list_item.Name %></td>
-        <td><%= list_item.Duedate %></td>
-        <td><%= list_item.Owner %></td>
-        <td><%= list_item.Parent %></td>
-        <td><%= link_to 'Show', list_item %></td>
-        <td><%= link_to 'Edit', edit_list_item_path(list_item) %></td>
-        <td><%= link_to 'Destroy', list_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1>Listing items of list 
+<%= params[:current_list]%>
+</h1>
+<%= debug params %>
 
 <br>
-
+<%= render partial: 'listing', :current_list=>params[:curent_list]%>
 <%= link_to 'New List item', new_list_item_path %>
