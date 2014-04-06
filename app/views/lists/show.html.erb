@@ -9,10 +9,28 @@
   <strong>Owner:</strong>
   <%= @list.user.try(:email) %>
 </p>
+<h2>
+List items
+</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Duedate</th>
+    </tr>
+  </thead>
 
-<%= debug params %>
+  <tbody>
+<% ListItem.where("List_id = ?", @list.id).each do |li| %>
+<tr> 
+<td> <%=li.Name%></td>
+<td> <%=li.Duedate%></td>
+
+</tr>
+<% end %>
+  </tbody>
+</table>
 <%= link_to 'New List item', new_list_item_path(:list_id=>@list.id) %>
-<%= render "list_items/listing", :locals=>{:current_list=>@list.id}%>
 
 
 <%= link_to 'Edit', edit_list_path(@list) %> 
