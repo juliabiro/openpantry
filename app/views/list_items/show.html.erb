@@ -9,10 +9,14 @@
   <strong>Duedate:</strong>
   <%= @list_item.Duedate %>
 </p>
+<p>
+  <strong>Status:</strong>
+  <%= @list_item.Status %>
+</p>
 
 <p>
-  <strong>Parent list id:</strong>
-  <%= @list_item.List_id %>
+  <strong>Parent list:</strong>
+  <%= List.find(@list_item.List_id).Name %>
 </p>
 
 <%= debug params %>  

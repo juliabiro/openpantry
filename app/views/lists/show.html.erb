@@ -17,6 +17,7 @@ List items
     <tr>
       <th>Name</th>
       <th>Duedate</th>
+      <th>Status</th>
     </tr>
   </thead>
 
@@ -25,7 +26,9 @@ List items
 <tr> 
 <td> <%=li.Name%></td>
 <td> <%=li.Duedate%></td>
-
+<td> <%=li.Status%></td>
+<td><%= link_to 'Edit', edit_list_item_path(li)%></td>
+<td><%= link_to 'Destroy', li, method: :delete, data: { confirm: 'Are you sure?' }%></td>
 </tr>
 <% end %>
   </tbody>

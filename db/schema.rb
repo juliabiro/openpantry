@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140330210152) do
   create_table "list_items", force: true do |t|
     t.string   "Name"
     t.date     "Duedate"
-    t.integer  "Status"
+    t.integer  "Status",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "List_id"

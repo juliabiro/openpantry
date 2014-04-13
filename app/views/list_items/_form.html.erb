@@ -10,18 +10,42 @@
       </ul>
     </div>
   <% end %>
-
- <%= debug params %>  <div class="field">
+<table>
+<thead>
+<tr>
+<th>
     <%= f.label :Name %><br>
+</th>
+<th>
+    <%= f.label :Duedate %><br>
+</th>
+<th>
+    <%= f.label :Status %><br>
+</th>
+</tr>
+</thead>
+<tr>
+<td>
+  <div class="field">
     <%= f.text_field :Name %>
   </div>
-  <div class="field">
-    <%= f.label :Duedate %><br>
+</td><td> 
+ <div class="field">
     <%= f.date_select :Duedate %>
   </div>
-<%= f.hidden_field :List_id, value:params[:list_id] %>
-
+</td><td> 
+  <div class="field">
+    <%= f.select(:Status, options_for_select(ListItem.Statuses.keys)) %>
+  </div>
+  <%= f.hidden_field :List_id, value:params[:list_id] %>
+</td><td> 
   <div class="actions">
     <%= f.submit %>
   </div>
+</td> 
+
+</tr>  
+</table>
+<!--TBD: dynamically change input form using JS-->
+ <%= debug params %>  
 <% end %>

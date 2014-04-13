@@ -3,7 +3,7 @@ class CreateListItems < ActiveRecord::Migration
     create_table :list_items do |t|
       t.string :Name
       t.date :Duedate
-      t.integer :Status
+      t.column :Status, :integer, default: 0
       t.timestamps
     end
   end

@@ -14,16 +14,5 @@ List items
   </thead>
 
   <tbody>
-<% ListItem.where("List_id = ?", @list.id).each do |li| %>
-<tr> 
-<td> <%=li.Name%></td>
-<td> <%=li.Duedate%></td>
-
-</tr>
-<% end %>
-  </tbody>
-</table>
-<%= link_to 'New List item', new_list_item_path(:list_id=>@list.id) %>
-
 <%= link_to 'Show', @list %> |
 <%= link_to 'Back', lists_path %>

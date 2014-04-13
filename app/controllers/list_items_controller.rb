@@ -69,7 +69,7 @@ class ListItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_item_params
-      params.require(:list_item).permit(:Name, :Duedate, :List_id)
+      params.require(:list_item).permit(:Name, :Duedate, :Status, :List_id)
     end
  def req_lid
 	params.require(:current_list)
